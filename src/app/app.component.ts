@@ -42,9 +42,9 @@ export class AppComponent implements OnInit{
         this.todos = todos;
         this.loading = false;
       },
-        error =>{
-        this.error = error.message;
-        });
+      error =>{
+      this.error = error.message;
+      });
   }
 
   removeTodo(id: number | undefined) {
