@@ -1,24 +1,19 @@
+<nav class="navbar">
+  <h1>Angular Modules</h1>
+
+  <ul>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+    <li routerLinkActive="active"><a routerLink="/about">About</a></li>
+  </ul>
+</nav>
+
 <div class="container">
-  <h1>Angular HttpClient</h1>
-
   <div class="card">
-    <div class="form-control">
-      <input type="text" placeholder="Name">
-    </div>
-    <button class="btn">Add</button>
-    <button class="btn">Load</button>
+
+    <router-outlet></router-outlet>
+
   </div>
-
-  <hr>
-
-  <div class="card">
-    <p>
-      <span class="completed">Name</span>
-      <span>
-        <button class="btn btn-danger">Delete</button>
-        <button class="btn">Complete</button>
-      </span>
-    </p>
-  </div>
-
 </div>
+
+
+
