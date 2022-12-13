@@ -1,6 +1,7 @@
-import {Component, ComponentFactoryResolver, ViewChild} from '@angular/core'
+import {Component, ViewChild} from '@angular/core'
 import {ModalComponent} from "./modal/modal.component";
 import {RefDirective} from "./ref.directive";
+import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,14 @@ import {RefDirective} from "./ref.directive";
 })
 export class AppComponent {
   @ViewChild(RefDirective) refDir:RefDirective;
-  constructor() {
+  constructor(
+    private title: Title,
+    private meta: Meta) {
+    title.setTitle('app component page');
+    meta.addTags([
+      {name: 'keywords', content: 'angular'},
+      {name: 'description', content: 'this is app component'}
+    ])
   }
   showModal() {
     this.refDir.containerRef.clear();
